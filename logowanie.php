@@ -40,11 +40,9 @@ if (isset($_POST['loguj']))
    // sprawdzamy czy login i hasło są dobre
    if (mysql_num_rows(mysql_query("SELECT login, haslo FROM users WHERE login = '".$login."' AND haslo = '".md5($haslo)."';")) > 0)
    {
-	   
-     
-	  
+	        
 	
-	  // log - pomyślne logowanie
+	  // logi - pomyślne logowanie
       mysql_query("INSERT INTO `logi` (`login`, `status`)
             VALUES ('".$login."', '".$status1."');");
 			
